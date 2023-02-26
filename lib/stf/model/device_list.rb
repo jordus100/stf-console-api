@@ -53,7 +53,8 @@ module Stf
     end
 
     def as_connect_url_list
-      @devices.map {|d| d.remoteConnectUrl}.reject { |c| c.nil? || c.empty? }
+      @devices.reject { |d| d.remoteConnectUrl.nil? || d.remoteConnectUrl.empty? }
+              .map{|d| DI[:device_enhancer].get_tunneled_remote_connect_url(d)}
     end
 
     def select

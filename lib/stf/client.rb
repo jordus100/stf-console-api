@@ -49,13 +49,28 @@ module Stf
       return response
     end
 
+    def open_tunnel(provider_ip, port)
+      response = execute "/api/v1/tunnel", Net::HTTP::Post, {ipAddress: provider_ip, port: port}.to_json
+      return response
+    end
+
+    def destroy_tunnel(ip, port)
+      response = execute "/api/v1/tunnel", Net::HTTP::Delete, {ipAddress: ip, port: port}.to_json
+      return response.success
+    end
+
     def stop_debug(serial)
       response = execute "/api/v1/user/devices/#{serial}/remoteConnect", Net::HTTP::Delete
       return response.success
     end
 
+    def check_tunnel(provider_ip, port)
+      response = execute "/api/v1/tunnel/#{provider_ip}/#{port}", Net::HTTP::Get
+      return response
+    end
+
     def add_adb_public_key(adb_public_key)
-      response = execute '/api/v1/user/adbPublicKeys', Net::HTTP::Post, { publickey: adb_public_key }.to_json
+      response = execute '/api/v1/user/adbPublicKeys', Net::HTTP::Post, {publickey: adb_public_key }.to_json
       return response.success
     end
 

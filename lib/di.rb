@@ -11,6 +11,7 @@ require 'stf/interactor/get_keys_interactor'
 require 'stf/interactor/get_values_interactor'
 require 'stf/interactor/add_adb_public_key'
 require 'stf/validate/uri_validator'
+require 'stf/model/device_enhancer'
 
 class DI
   class << self
@@ -68,6 +69,9 @@ class DI
 
       c.register(:add_adb_public_key_interactor,
                  -> {Stf::AddAdbPublicKeyInteractor.new},
+                 memoize: true)
+      c.register(:device_enhancer,
+                 -> {Stf::DeviceEnhancer.new},
                  memoize: true)
     end
 

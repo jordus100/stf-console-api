@@ -11,7 +11,7 @@ module Stf
 
     def execute(remote_connect_url)
       remote_devices = DI[:stf].get_user_devices
-      device = remote_devices.find {|d| d.remoteConnect == true && d.remoteConnectUrl.eql?(remote_connect_url)}
+      device = remote_devices.find {|d| d.remoteConnect == true && DI[:device_enhancer].get_tunneled_remote_connect_url(d).eql?(remote_connect_url)}
 
       # try to disconnect anyway
       execute_adb_with 30, "disconnect #{remote_connect_url}"
