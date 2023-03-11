@@ -56,7 +56,7 @@ ENVIRONMENT VARIABLES
     STF_URL   - URL to STF 
 ```
 - Authorization token can be obtained from the STF web interface in Settings -> Keys
-- When connecting while using this tool for the first time, have the STF web interface open
+- When connecting with this tool for the first time, have the STF web interface open
 to accept adding a new ADB key. This is necessary for every new machine that hasn't connected 
 yet to Remote Debug on a given STF instance.
 
