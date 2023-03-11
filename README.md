@@ -15,7 +15,7 @@ Designed with the following scenario in mind:
 Allows for filtering by any device description parameter
 as well as listing all available values of a given parameter
 e.g. all unique names of devices in the STF instance.
-- 
+
 ## Installation from source
 ## Prequisities
 
