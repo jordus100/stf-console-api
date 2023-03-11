@@ -12,6 +12,8 @@ Designed with the following scenario in mind:
 2. Do something with the device via adb (Instrumentation Test, adb install, etc)
 3. Disconnect from device
 
+Due to it being a console tool, it's very easy to use  it for test automation in a CI\CD pipeline, for example in Jenkins.
+
 Allows for filtering by any device description parameter
 as well as listing all available values of a given parameter
 e.g. all unique names of devices in the STF instance.
