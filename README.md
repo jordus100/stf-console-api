@@ -26,6 +26,7 @@ e.g. all unique names of devices in the STF instance.
 - Enter the directory where the repository is cloned
 - ```gem build stf-client.gemspec```
 - ```gem install stf-client-0.4.0.gem``` (or different version, see output of the previous command)
+- Run it by simply entering ```stf-client``` 
 
 ## Usage
 
