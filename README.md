@@ -4,7 +4,7 @@
 
 # Stf::Client
 
-Automation client for connecting to [OpenSTF](https://github.com/openstf/stf) devices.
+Automation client for connecting to Smartdust STF devices.
 
 Designed with the following scenario in mind:
 
@@ -12,21 +12,20 @@ Designed with the following scenario in mind:
 2. Do something with the device via adb (Instrumentation Test, adb install, etc)
 3. Disconnect from device
 
+Allows for filtering by any device description parameter
+as well as listing all available values of a given parameter
+e.g. all unique names of devices in the STF instance.
+- 
+## Installation from source
+## Prequisities
+
+- Ruby along with RubyGems installed - versions higher than 3.0.2 are not guaranteed to work
+- This repository cloned
+
 ## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'stf-client'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install stf-client
+- Enter the directory where the repository is cloned
+- ```gem build stf-client.gemspec```
+- ```gem install stf-client-0.4.0.gem``` (or different version, see output of the previous command)
 
 ## Usage
 
@@ -55,6 +54,10 @@ ENVIRONMENT VARIABLES
     STF_TOKEN - Authorization token 
     STF_URL   - URL to STF 
 ```
+- Authorization token can be obtained from the STF web interface in Settings -> Keys
+- When connecting while using this tool for the first time, have the STF web interface open
+to accept adding a new ADB key. This is necessary for every new machine that hasn't connected 
+yet to Remote Debug on a given STF instance.
 
 ## Contributing
 
