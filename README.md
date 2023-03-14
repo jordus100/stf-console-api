@@ -4,7 +4,7 @@
 
 # Stf::Client
 
-Automation client for connecting to Smartdust STF devices.
+Automation client for connecting to Smartdust Lab devices via adb from cli.
 
 Designed with the following scenario in mind:
 
@@ -16,7 +16,7 @@ Due to it being a console tool, it's very easy to use  it for test automation in
 
 Allows for filtering by any device description parameter
 as well as listing all available values of a given parameter
-e.g. all unique names of devices in the STF instance.
+e.g. all unique names of devices in the lab instance.
 
 ## Installation from source
 ## Prequisities
@@ -26,9 +26,9 @@ e.g. all unique names of devices in the STF instance.
 
 ## Installation
 - Enter the directory where the repository is cloned
-- ```gem build stf-client.gemspec```
-- ```gem install stf-client-0.4.0.gem``` (or different version, see output of the previous command)
-- Run it by simply entering ```stf-client``` 
+- ```gem build smartdust-client.gemspec```
+- ```gem install smartdust-client-1.0.0.gem``` (or different version, see output of the previous command)
+- Run it by simply entering ```smartdust-client``` 
 
 ## Usage
 
@@ -57,14 +57,10 @@ ENVIRONMENT VARIABLES
     STF_TOKEN - Authorization token 
     STF_URL   - URL to STF 
 ```
-- Authorization token can be obtained from the STF web interface in Settings -> Keys
-- When connecting with this tool for the first time, have the STF web interface open
+- Authorization token can be obtained from the Smartdust Lab web interface in Settings -> Keys
+- When connecting with this tool for the first time, have the Smartdust Lab web interface open
 to accept adding a new ADB key. This is necessary for every new machine that hasn't connected 
-yet to Remote Debug on a given STF instance.
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/Malinskiy/stf-client.
+yet to Remote Debug on a given Lab instance.
 
 ## License
 
