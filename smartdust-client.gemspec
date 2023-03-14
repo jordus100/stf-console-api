@@ -4,16 +4,16 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'stf/version'
 
 Gem::Specification.new do |spec|
-  spec.name     = 'stf-client'
+  spec.name     = 'smartdust-client'
   spec.version  = Stf::VERSION
-  spec.authors  = ['Anton Malinskiy']
-  spec.email    = ['anton@malinskiy.com']
-  spec.summary  = %q{Request devices from Smartphone Test Farm for adb connection}
-  spec.homepage = 'https://github.com/Malinskiy/stf-client'
+  spec.authors  = ['Smartdust']
+  spec.email    = ['jordan@smartdust.me']
+  spec.summary  = %q{Connect to devices from Smartdust Lab via adb from cli}
+  spec.homepage = 'https://github.com/jordus100/stf-client'
   spec.license  = 'MIT'
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.require_paths = ['lib']
-  spec.executables   = ['stf-client']
+  spec.executables   = ['smartdust-client']
 
   spec.add_runtime_dependency 'gli', '~> 2.17'
   spec.add_runtime_dependency 'ADB', '~> 0.5'
