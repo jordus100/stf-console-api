@@ -1,4 +1,5 @@
 module Stf
+  require 'facets/boolean'
   class Device < OpenStruct
     def getValue(key)
       getValueFromObject(self, key)
@@ -37,6 +38,9 @@ module Stf
     def checkFilter?(filter)
       return true if filter.nil?
       key, value = filter.split(':', 2)
+      if value == 'true' || value == 'false'
+        value = value.to_b
+      end
       getValue(key) == value
     end
 
@@ -55,7 +59,6 @@ module Stf
     def concat(prefix, key)
       prefix.to_s.empty? ? key : prefix + '.' + key
     end
-
 
     def getValueFromObject(obj, key)
       keys = key.split('.', 2)

@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'dry-container', '~> 0.6.0'
   spec.add_runtime_dependency 'dry-configurable', '~> 0.1.4'
   # spec.add_runtime_dependency 'pry', '~> 0.10.4'
+  spec.add_runtime_dependency 'facets', '~> 3.1.0'
 
   spec.add_development_dependency 'bundler', '~> 1.16.a'
   spec.add_development_dependency 'rake', '~> 10.0'
