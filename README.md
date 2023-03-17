@@ -2,7 +2,7 @@
 [![Gem](https://img.shields.io/gem/v/stf-client.svg)](https://rubygems.org/gems/stf-client)
 [![Gem](https://img.shields.io/gem/dt/stf-client.svg)](https://rubygems.org/gems/stf-client)
 
-# Stf::Client
+# Smartdust CLI client
 
 Automation client for connecting to Smartdust Lab devices via adb from cli.
 
