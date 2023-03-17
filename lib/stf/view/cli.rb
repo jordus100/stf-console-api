@@ -7,7 +7,7 @@ module Stf
 
     extend self
 
-    program_desc "Smartphone Test Lab client (version #{Stf::VERSION})"
+    program_desc "Smartdust Lab client (version #{Stf::VERSION})"
 
     desc 'Be verbose'
     switch [:v, :verbose]
@@ -18,29 +18,29 @@ module Stf
     desc 'Log file'
     flag [:log]
 
-    desc 'Authorization token, can also be set by environment variable STF_TOKEN'
+    desc 'Authorization token, can also be set by environment variable SD_TOKEN'
     flag [:t, :token]
 
-    desc 'URL to STF, can also be set by environment variable STF_URL'
+    desc 'URL to Smartdust Lab, can also be set by environment variable SD_URL'
     flag [:u, :url]
 
     pre do |global_options, command, options, args|
 
-      global_options[:url] = ENV['STF_URL'] if global_options[:url].nil?
-      global_options[:token] = ENV['STF_TOKEN'] if global_options[:token].nil?
+      global_options[:url] = ENV['SD_URL'] if global_options[:url].nil?
+      global_options[:token] = ENV['SD_TOKEN'] if global_options[:token].nil?
 
-      help_now!('STF url is required') if global_options[:url].nil?
+      help_now!('Smartdust Lab url is required') if global_options[:url].nil?
       help_now!('Authorization token is required') if global_options[:token].nil?
 
       Log::verbose(global_options[:verbose])
 
       DI.init(global_options)
 
-      help_now!('Valid STF url is required, e.g. http(s)://openstf.local') if !DI[:uri_validator].validate(global_options[:url])
+      help_now!('Valid Smartdust Lab url is required, e.g. https://public.smartdust.me') if !DI[:uri_validator].validate(global_options[:url])
       true
     end
 
-    desc 'Search for a device available in STF and attach it to local adb server'
+    desc 'Search for a device available in Smartdust Lab and attach it to local adb server'
     command :connect do |c|
       c.desc 'Connect to all available devices'
       c.switch [:all]
@@ -82,7 +82,7 @@ module Stf
       end
     end
 
-    desc 'Disconnect device(s) from local adb server and remove device(s) from user devices in STF'
+    desc 'Disconnect device(s) from local adb server and remove device(s) from user devices in Smartdust Lab'
     command :disconnect do |c|
       c.desc '(optional) ADB connection url of the device'
       c.switch [:all]
@@ -97,12 +97,12 @@ module Stf
       end
     end
 
-    desc 'Frees all devices that are assigned to current user in STF. Doesn\'t modify local adb'
+    desc 'Frees all devices that are assigned to current user in Smartdust Lab. Doesn\'t modify local adb'
     command :clean do |c|
       c.action {DI[:remove_all_user_devices_interactor].execute}
     end
 
-    desc 'Add adb public key into STF'
+    desc 'Add adb public key into Smartdust Lab'
     command :trustme do |c|
       c.desc 'Location of adb public key'
       c.flag [:k, :adb_public_key_location]

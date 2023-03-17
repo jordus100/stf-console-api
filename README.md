@@ -26,8 +26,10 @@ e.g. all unique names of devices in the lab instance.
 
 ## Installation
 - Enter the directory where the repository is cloned
+- adding "sudo" before the following commands might be needed:
 - ```gem build smartdust-client.gemspec```
 - ```gem install smartdust-client-1.0.0.gem``` (or different version, see output of the previous command)
+
 - Run it by simply entering ```smartdust-client``` 
 
 ## Usage
